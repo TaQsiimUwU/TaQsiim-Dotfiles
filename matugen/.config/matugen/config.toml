@@ -36,3 +36,8 @@ output_path = '~/.local/state/quickshell/user/generated/wallpaper/path.txt'
 [templates.nvim]
 input_path = "~/.config/matugen/templates/pywal.vim" # We will create this standard template
 output_path = "~/.cache/wal/colors-wal.vim"
+
+[templates.pywalfox]
+input_path = '~/.config/matugen/templates/pywalfox/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
