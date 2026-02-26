@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo "📦 Installing zram-generator..."
+# Install the package from the official Arch repos
+sudo pacman -S --needed zram-generator --noconfirm
+
+echo "⚙️ Writing ZRAM configuration (12GB, zstd)..."
+# Use tee to safely write to the protected /etc directory
+sudo tee /etc/systemd/zram-generator.conf > /dev/null <<EOF
+[zram0]
+zram-size = 12288
+compression-algorithm = zstd
+EOF
+
+echo "🚀 Reloading systemd and starting ZRAM..."
+sudo systemctl daemon-reload
+# Enable --now starts it immediately and ensures it survives reboots
+sudo systemctl enable --now systemd-zram-setup@zram0.service
+
+echo "✅ ZRAM is now active!"
+echo "📊 Current ZRAM status:"
+zramctl
