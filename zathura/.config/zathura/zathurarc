@@ -1,0 +1,18 @@
+# Adjust default settings
+set adjust-open "best-fit"
+set font "monospace 10"
+set guioptions "s"
+set page-cache-size 10
+set selection-clipboard clipboard
+
+# Dark mode / Recolor settings
+set recolor "true"
+set recolor-lightcolor "#1e1e2e"
+set recolor-darkcolor "#cdd6f4"
+
+# Basic keybindings (Vim-like navigation)
+map u scroll half-up
+map d scroll half-down
+map D toggle-page-mode
+map r rotate
+

@@ -54,3 +54,5 @@ for i = 1, 10 do
 		hl.dispatch(hl.dsp.window.move({ workspace = workspace_in_group(i) }))
 	end, { description = "Window: Send to workspace " .. i })
 end
+
+hl.bind("SUPER + Space", hl.dsp.no_op())
